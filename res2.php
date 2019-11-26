@@ -1,5 +1,5 @@
 <?php
-require_once("func.php");
+require_once("funx2.php");
 $items =createItems();
 ?>
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ $items =createItems();
 	</header>
 
 	<main>
-		<article id="result">
+		<article id="result2">
 			<h2>商品検索 - 検索結果</h2>
 			<section>
 				<h3>商品一覧</h3>
@@ -29,19 +29,18 @@ $items =createItems();
 					<tr>
 						<th>書籍名</th>
 						<th>価格</th>
-						<th>著者</th>
-						<th>ISBN</th>
+						<th>収録時間</th>
 						<th></th>
 					</tr>
-						<?php for($i = 0;$i < count($items);$i++){ ?>
+					<?php for($i = 0;$i < count($items);$i++){ ?>
 						<tr>
-						    <td><?=$items[$i]->getPname()?></td>
+						    <td><?=$items[$i]->getName()?></td>
 						    <td><?=$items[$i]->getPrice()?>円</td>
-						    <td><?=$items[$i]->getWname()?></td>
-						    <td><?=$items[$i]->getIsbn()?></td>
+						    <td><?=$items[$i]->getTime()?>分</td>
 						    <td><a href="cart.php?id=<?=$i?>">カートに入れる</a></td>
 						   </tr>
-						   <?php } ?>
+					<?php } ?>
+					
 				</table>
 			</section>
 		</article>
